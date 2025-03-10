@@ -53,6 +53,13 @@
             }
             else if (opcao == "4")
             {
+            
+                if (segundoNumero == 0)
+                {
+                    Console.WriteLine("Não é possível dividir um número por 0.");
+                    Console.ReadLine();
+                    continue;
+                }
                 resultado = primeiroNumero / segundoNumero;
             }
 
