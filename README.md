@@ -1,6 +1,6 @@
 # Calculadora Básica para Academia do Programador
 
-![](https://imgur.com/roEmfXU)
+![](https://i.imgur.com/roEmfXU.gif)
 
 ## Introdução
 
