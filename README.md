@@ -25,3 +25,20 @@ Uma calculadora de console simples que permite realizar as quatro operações mate
 ```
 dotnet restore
 ```
+4. Em seguida, compile a solução utilizando o comando:
+```
+dotnet build --configuration Release
+```
+5. Para Executar o projeto compilando em tempo real
+```
+dotnet run --project Calculadora.ConsoleApp
+```
+6. Para executar o arquivo compilado, navegue até a pasta ./Calculadora.ConsoleApp/bin/Release/net8.0/ e execute o arquivo:
+```
+Calculdora.ConsoleApp.exe
+```
+
+## Requisitos
+
+- .NET SDK (recomendado .NET 8.0 ou superior) para compilação e execução do projeto.
+
