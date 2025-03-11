@@ -1,10 +1,10 @@
 ﻿internal class Program
 {
     private static void Main(string[] args)
-    {
-        //Loop de execucação 0 -1
+    {        
+        string[] historicoOperacoes = new string[100];
+        int contadorHistorico = 0;
 
-              
         while (true) // enquanto
         {
             Console.Clear();            
@@ -17,6 +17,7 @@
             Console.WriteLine("3 - Multiplicação");
             Console.WriteLine("4 - Divisão");
             Console.WriteLine("5 - Tabuada");
+            Console.WriteLine("6 - Histórico de Operações");
             Console.WriteLine("S - Sair");
 
             Console.WriteLine("Escolha uma opção: ");
@@ -50,6 +51,23 @@
                 continue;
             }
 
+            else if(opcao == "6")
+            {
+                Console.WriteLine("-------------------------------");
+                Console.WriteLine("Histórico de Operações");
+                Console.WriteLine("-------------------------------");
+                
+                for (int contador = 0; contador < historicoOperacoes.Length; contador++)
+                {
+                    string valorAtual = historicoOperacoes[contador];
+                    if (valorAtual != null)
+                    Console.WriteLine(valorAtual);
+                }
+                Console.WriteLine("Aperte Enter para continuar");
+                Console.ReadLine();
+                continue;
+            }
+
 
             Console.Write("Digite o primeiro número: ");
             string primeiroNumeroString = Console.ReadLine();
@@ -64,15 +82,19 @@
             if (opcao == "1")
             {
                 resultado = primeiroNumero + segundoNumero;
+                historicoOperacoes[contadorHistorico] = $"{primeiroNumero} + {segundoNumero} = {resultado}";
+                contadorHistorico += 1;
             }
 
             else if (opcao == "2")
             {
                 resultado = primeiroNumero - segundoNumero;
+                historicoOperacoes[contadorHistorico] = $"{primeiroNumero} - {segundoNumero} = {resultado}";
             }
             else if (opcao == "3")
             {
                 resultado = primeiroNumero * segundoNumero;
+                historicoOperacoes[contadorHistorico] = $"{primeiroNumero} * {segundoNumero} = {resultado}";
             }
             else if (opcao == "4")
             {
@@ -84,9 +106,12 @@
                     continue;
                 }
                 resultado = primeiroNumero / segundoNumero;
+                historicoOperacoes[contadorHistorico] = $"{primeiroNumero} / {segundoNumero} = {resultado}";
             }
 
-                Console.WriteLine("--------------------------");
+            contadorHistorico += 1;
+
+            Console.WriteLine("--------------------------");
             Console.WriteLine("Resultado: " + resultado.ToString("F2")); // floating points = 2
             Console.WriteLine("--------------------------");
 
