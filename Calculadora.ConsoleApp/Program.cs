@@ -7,23 +7,9 @@
 
         while (true) // enquanto
         {
-            Console.Clear();            
-            Console.WriteLine("-------------------------------");
-            Console.WriteLine("Calculadora Tabajara 2025");
-            Console.WriteLine("-------------------------------");
 
-            Console.WriteLine("1 - Somar");
-            Console.WriteLine("2 - Subtrair");
-            Console.WriteLine("3 - Multiplicação");
-            Console.WriteLine("4 - Divisão");
-            Console.WriteLine("5 - Tabuada");
-            Console.WriteLine("6 - Histórico de Operações");
-            Console.WriteLine("S - Sair");
-
-            Console.WriteLine("Escolha uma opção: ");
-
-
-            string opcao = Console.ReadLine().ToUpper(); // converte para maiúsculo        
+            //Exibe o Menu e redireciona para a operação selecionada
+            string opcao = ExibirMenu();                 
 
             //estrutura de decisão
             if (opcao == "S")            
@@ -125,5 +111,26 @@
         }
     }
 
+    static string ExibirMenu()
+    {
+        Console.Clear();
+        Console.WriteLine("-------------------------------");
+        Console.WriteLine("Calculadora Tabajara 2025");
+        Console.WriteLine("-------------------------------");
+
+        Console.WriteLine("1 - Somar");
+        Console.WriteLine("2 - Subtrair");
+        Console.WriteLine("3 - Multiplicação");
+        Console.WriteLine("4 - Divisão");
+        Console.WriteLine("5 - Tabuada");
+        Console.WriteLine("6 - Histórico de Operações");
+        Console.WriteLine("S - Sair");
+
+        Console.WriteLine("Escolha uma opção: ");
+
+        string opcao = Console.ReadLine()!.ToUpper();
+
+        return opcao;
+    }
         
 }
