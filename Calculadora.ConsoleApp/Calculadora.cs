@@ -44,7 +44,19 @@
 
             return resultado;
         }
+        public static string[] GerarTabuada(int numeroTabuada)
+        {
+            string[] linhasTabuadas = new string[10];
+            
+            for (int contador = 1; contador <= 10; contador++)
+            {
+                int resultadoTabuada = numeroTabuada * contador;
+                //interpolação de string com variaveis
+                linhasTabuadas[contador - 1] = $"{numeroTabuada} x {contador} = {resultadoTabuada}";
+            }
 
+            return linhasTabuadas;
+        }
         public static string[] ObterHistoricoDeOperacacoes()
         {
             return historicoOperacoes;

@@ -74,11 +74,12 @@ internal class Program
         Console.Write("Digite o número: ");
         int numeroTabuada = Convert.ToInt32(Console.ReadLine());
 
-        for (int contador = 1; contador <= 10; contador++)
+        string[] linhasTabuada = Calculadora.GerarTabuada(numeroTabuada);
+
+        for (int contador = 0; contador <= linhasTabuada.Length; contador++)
         {
-            int resultadoTabuada = numeroTabuada * contador;
             //interpolação de string com variaveis
-            Console.WriteLine($"{numeroTabuada} x {contador} = {resultadoTabuada}");
+            Console.WriteLine(linhasTabuada[contador]);
         }
         Console.WriteLine("--------------------------");
         Console.WriteLine("Aperte ENTER para continuar");
