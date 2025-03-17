@@ -1,8 +1,7 @@
 ﻿namespace Calculadora.ConsoleApp;
 internal class Program
 {
-    static string[] historicoOperacoes = new string[100];
-    static int contadorHistorico = 0;
+
     private static void Main(string[] args)
     {
         while (true) // enquanto
@@ -100,6 +99,8 @@ internal class Program
         Console.WriteLine("Histórico de Operações");
         Console.WriteLine("-------------------------------");
 
+        string[] historicoOperacoes = Calculadora.ObterHistoricoDeOperacacoes();
+
         for (int contador = 0; contador < historicoOperacoes.Length; contador++)
         {
             string valorAtual = historicoOperacoes[contador];
@@ -120,22 +121,15 @@ internal class Program
 
         decimal resultado = 0;
 
-        if (operacao == "1")
-        {
-            resultado = Calculadora.Somar(primeiroNumero, segundoNumero);
-            historicoOperacoes[contadorHistorico] = $"{primeiroNumero} + {segundoNumero} = {resultado}";            
-        }
-
-        else if (operacao == "2")
-        {
-            resultado = Calculadora.Subtrair(primeiroNumero, segundoNumero);
-            historicoOperacoes[contadorHistorico] = $"{primeiroNumero} - {segundoNumero} = {resultado}";
-        }
+        if (operacao == "1")        
+            resultado = Calculadora.Somar(primeiroNumero, segundoNumero);  
+        
+        else if (operacao == "2")        
+            resultado = Calculadora.Subtrair(primeiroNumero, segundoNumero);    
+        
         else if (operacao == "3")
-        {
-            resultado = Calculadora.Multiplicar(primeiroNumero, segundoNumero);
-            historicoOperacoes[contadorHistorico] = $"{primeiroNumero} * {segundoNumero} = {resultado}";
-        }
+             resultado = Calculadora.Multiplicar(primeiroNumero, segundoNumero); 
+        
         else if (operacao == "4")
         {
 
@@ -144,11 +138,9 @@ internal class Program
                 Console.WriteLine("Não é possível dividir um número por 0.");                
                 segundoNumero = Convert.ToDecimal(Console.ReadLine());
             }
-            resultado = Calculadora.Dividir(primeiroNumero, segundoNumero);
-            historicoOperacoes[contadorHistorico] = $"{primeiroNumero} / {segundoNumero} = {resultado}";
+            resultado = Calculadora.Dividir(primeiroNumero, segundoNumero);            
 
-        }
-        contadorHistorico += 1;
+        }        
 
         return resultado;
     }
